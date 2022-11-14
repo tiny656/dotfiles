@@ -12,8 +12,3 @@ source ~/.config/nvim/plugin/plugins.vim
 set encoding=utf-8
 set relativenumber
 set number
-
-
-
-
-
