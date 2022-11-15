@@ -34,7 +34,6 @@ nnoremap <Leader>hw <C-W>h            " 跳转至左方的窗口
 nnoremap <Leader>kw <C-W>k            " 跳转至上方的子窗口
 nnoremap <Leader>jw <C-W>j            " 跳转至下方的子窗口
 nmap <Leader>M %                      " 定义快捷键在结对符之间跳转
-map <Leader>H :history<CR>            " Recently edited files
 
 "-------------------------------------------------------------------------------
 " Colors & Formatting
@@ -48,15 +47,14 @@ filetype indent on
 " ---------------------------------------------------------------------------
 " Generall Settings
 " ---------------------------------------------------------------------------
-"
+
 syntax on                             " Syntax highlight
 set number                            " Enable line numbers
 set scrolloff=5                       " Leave 5 lines of buffer when scrolling
 set sidescrolloff=10                  " Leave 10 characters of horizontal buffer when scrolling
 set encoding=utf-8
-
-set relativenumber
 set ruler
+set cursorline
 set autoread                          " Auto reload changed files
 set wildmenu                          " Tab autocomplete in command mode
 set wildmode=full                     " 
@@ -71,15 +69,24 @@ set listchars=extends:→               " Show arrow if line continues rightward
 set listchars+=precedes:←             " Show arrow if line continues leftwards
 set nobackup nowritebackup noswapfile " Turn off backup files
 set noerrorbells novisualbell         " Turn off visual and audible bells
-set shiftwidth=2 tabstop=2            " Two spaces for tabs everywhere
-set expandtab
-set smartindent
-set softtabstop=4
-set autoindent
+set expandtab autoindent smartindent shiftwidth=2 tabstop=2            
 set foldmethod=syntax
 set history=500
 set hlsearch                          " Highlight search results
 set ignorecase smartcase              " Search queries intelligently set case
 set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
-set showcmd                           " Show size of visual selection
+set showmode                          " Show Insert, Replace or Visual mode put a message on the last line.
+set showcmd                           " Show enter commands
+set showmatch
+
+"-------------------------------------------------------------------------------
+" Neovim-specific configurations
+"-------------------------------------------------------------------------------
+
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  set termguicolors
+  colorscheme NeoSolarized
+  set background=dark
+endif
