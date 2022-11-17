@@ -33,7 +33,6 @@ nnoremap <Leader>lw <C-W>l            " 跳转至右方的窗口
 nnoremap <Leader>hw <C-W>h            " 跳转至左方的窗口
 nnoremap <Leader>kw <C-W>k            " 跳转至上方的子窗口
 nnoremap <Leader>jw <C-W>j            " 跳转至下方的子窗口
-nmap <Leader>M %                      " 定义快捷键在结对符之间跳转
 
 "-------------------------------------------------------------------------------
 " Colors & Formatting
@@ -69,7 +68,7 @@ set listchars=extends:→               " Show arrow if line continues rightward
 set listchars+=precedes:←             " Show arrow if line continues leftwards
 set nobackup nowritebackup noswapfile " Turn off backup files
 set noerrorbells novisualbell         " Turn off visual and audible bells
-set expandtab autoindent smartindent shiftwidth=2 tabstop=2            
+set expandtab smartindent autoindent shiftwidth=2 tabstop=2 softtabstop=2
 set foldmethod=syntax
 set history=500
 set hlsearch                          " Highlight search results
